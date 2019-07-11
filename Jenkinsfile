@@ -1,5 +1,5 @@
 node {
    stage('Build') {
-     sh 'env | sort'
+     sh ' env | sort'
    }
 }
