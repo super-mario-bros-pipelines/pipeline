@@ -6,6 +6,6 @@ properties([
 
 node {
    stage('Build') {
-     sh 'env | sort'
+     sh 'env | sort | grep "GITHUB_COMMENT" || true'
    }
 }
