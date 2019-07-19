@@ -11,6 +11,7 @@ pipeline {
             when { changeRequest fork: 'v1v/pipeline-1' }
             steps {
                 echo env.CHANGE_FORK
+                echo 'hi'
             }
         }
     }
