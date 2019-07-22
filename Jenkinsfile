@@ -1,2 +1,2 @@
 //skip comment
-node { echo 'bye' }
+node { echo 'bye2' }
