@@ -5,6 +5,7 @@ pipeline {
             when { changeRequest fork: 'v1v' }
             steps {
                 echo env.CHANGE_FORK
+                echo 'test'
             }
         }
         stage('Different repo name') {
