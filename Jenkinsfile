@@ -12,7 +12,7 @@ pipeline {
     stage('Checkout') {
       options { skipDefaultCheckout() }
       steps {
-        gitCheckout(credentialsId: '2a9602aa-ab9f-4e52-baf3-b71ca88469c7')
+        gitCheckout(credentialsId: 'secret')
         sh 'env | sort'
       }
     }
