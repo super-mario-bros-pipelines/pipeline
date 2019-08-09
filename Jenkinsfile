@@ -15,6 +15,7 @@ pipeline {
         script {
           def commentTrigger = isCommentTrigger()
           echo "commentTrigger = ${commentTrigger}"
+          sh 'env | sort'
         }
       }
     }
