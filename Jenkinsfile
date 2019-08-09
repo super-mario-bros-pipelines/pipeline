@@ -6,6 +6,9 @@ pipeline {
     REPO = 'apm-agent-nodejs'
     PIPELINE_LOG_LEVEL='INFO'
   }
+  triggers {
+    issueCommentTrigger('jenkins run')
+  }
   stages {
     stage('Checkout') {
       steps {
