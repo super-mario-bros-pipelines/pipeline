@@ -3,7 +3,6 @@
 pipeline {
   agent { label 'linux && immutable' }
   environment {
-    REPO = 'apm-agent-nodejs'
     PIPELINE_LOG_LEVEL='DEBUG'
   }
   triggers {
@@ -11,12 +10,10 @@ pipeline {
   }
   stages {
     stage('Checkout') {
+      options { skipDefaultCheckout() }
       steps {
-        script {
-          def commentTrigger = isCommentTrigger()
-          echo "commentTrigger = ${commentTrigger}"
-          sh 'env | sort'
-        }
+        gitCheckout(credentialsId: '2a9602aa-ab9f-4e52-baf3-b71ca88469c7')
+        sh 'env | sort'
       }
     }
   }
