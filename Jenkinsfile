@@ -10,6 +10,7 @@ pipeline {
           branch 'master'
           branch "v\\d?"
           tag "v\\d+\\.\\d+\\.\\d+*"
+          tag "v*"
         }
       }
       steps {
