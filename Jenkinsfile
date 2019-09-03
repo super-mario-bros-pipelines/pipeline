@@ -3,16 +3,18 @@
 pipeline {
   agent any
   stages {
-    when {
-      beforeAgent true
-      anyOf {
-        branch 'master'
-        branch "v\\d?"
-        tag "v\\d+\\.\\d+\\.\\d+*"
+    stage('when') {
+      when {
+        beforeAgent true
+        anyOf {
+          branch 'master'
+          branch "v\\d?"
+          tag "v\\d+\\.\\d+\\.\\d+*"
+        }
       }
-    }
-    steps {
-      echo 'done'
+      steps {
+        echo 'done'
+      }
     }
   }
 }
