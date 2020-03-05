@@ -2,6 +2,9 @@
 @Library('apm@current') _
 pipeline {
   agent any
+  triggers {
+    issueCommentTrigger('(?i).*jenkins\\W+tests.*')
+  }
   stages {
     stage('when') {
       when {
